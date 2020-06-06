@@ -1,3 +1,3 @@
 # fotógrafos.com.ar
 
-> Estamos preparando las bases necesarias para crear la comunidad más grande de fotógrafos de Argentina. 
+> Estamos preparando los cimientos necesarios para crear la comunidad de fotógrafos más grande de Argentina. 
