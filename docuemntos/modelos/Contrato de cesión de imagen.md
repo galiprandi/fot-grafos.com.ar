@@ -1,0 +1,35 @@
+AUTORIZACION DE USO DE IMAGEN
+
+1. Declaro que autorizo a Nombre_del_Fotógrafo, a que utilice total o parcialmente mi imagen, mi voz y/o reacciones, a fin de que la misma sea divulgada y/o incorporada con fines publicitarios en medios de comunicación audiovisuales, radiales, gráficos, internet, vía pública y/o cualquier otro soporte. 
+
+
+2. Dejo expresa constancia que por medio del presente documento cedo de manera gratuita, únicamente a Nombre_del_Fotógrafo, el derecho a divulgar mi imágen en los términos del presente, no siendo plausible de aplicación el artículo 9° del Convenio Colectivo de Trabajo de los Actores de Publicidad, relativo a las formas de contratación.
+
+
+
+ 
+
+
+
+__________________________________
+     Firma del Autorizante
+
+Aclaración:
+
+DNI:
+
+Lugar y Fecha:
+
+
+En caso de menores de edad completar los siguientes datos:
+
+
+
+
+
+_______________________________
+ Firma del Padre o Madre/Tutor
+
+Aclaración
+
+Documento:
