@@ -1,19 +1,14 @@
-# fotógrafos.com.ar
+## Fotógrafos de Argentina
 
->#### Creemos juntos la comunidad de fotógrafos más grande de Argentina. 
+Sitio web [http://fotógrafos.com.ar](fotógrafos.com.ar)
 
----
-## Te invitamos a:
+## Cómo aportar al proyecto
 
-- [Presentarte si eres nuevo](https://github.com/galiprandi/fotografos.com.ar/issues/new)
+Clone el repositorio e instale las dependencias necesarias
 
-- [Aportar ideas o sugerencias](https://github.com/galiprandi/fotografos.com.ar/issues/new)
-
-- [Realizar alguna preguntas](https://github.com/galiprandi/fotografos.com.ar/issues/new)
-
-- [¡ Pedir ayuda !](https://github.com/galiprandi/fotografos.com.ar/issues/new)
-
----
-
-
-File: Readme.md
+```
+git clone git@github.com:galiprandi/fotografos.com.ar.git
+cd fotografos.com.ar
+npm i
+npm run dev
+```
