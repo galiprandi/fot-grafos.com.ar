@@ -1,6 +1,25 @@
 <script>
   let Fotografos = [];
 
+  dbUsers.onSnapshot((docs) => {
+    docs.forEach((doc) => {
+      Fotografos = [];
+
+      Fotografos = [
+        ...Fotografos,
+        {
+          Nombre:
+            doc.data()["Nombre Comercial"] ||
+            `${doc.data().Nombre} ${doc.data().Apellido}`,
+          Email: doc.id,
+          Tel: doc.data()["Teléfono"] ? `Tel: ${doc.data()["Teléfono"]}` : "",
+          Ciudad: doc.data().Ciudad || doc.data().Provincia || "",
+        },
+      ];
+    });
+  });
+
+  /*
   dbUsers.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       Fotografos = [
@@ -16,6 +35,7 @@
       ];
     });
   });
+  */
 
   function filtrarTabla() {
     const input = document.getElementById("buscar");

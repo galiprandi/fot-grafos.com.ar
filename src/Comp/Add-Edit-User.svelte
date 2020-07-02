@@ -4,39 +4,42 @@
   export let id;
   let User = {};
 
+  // id = id || $loginUser.email;
+
   /* Si existe id busca el documento y carga sus datos */
-  id = id || $loginUser.email;
   (function cargarDatosDelUsuario() {
-    const id = LoginUser.email;
-    if (!id) {
-      return false;
-    }
-    console.log(id);
+    if (!LoginUser && !LoginUser.email) return false;
+    const email = LoginUser.email;
+
     /* Buscar datos de Firebase */
     dbUsers
-      .doc(id)
+      .doc(email)
       .get()
       .then((doc) => {
         if (doc.exists) {
           User = doc.data();
+          User.Actualización = new Date();
         } else {
+          console.log(
+            `El ususario ${LoginUser.displayName} no existe en la base de datos y se creará`
+          );
           const newUser = {
-            id: LoginUser.email,
-            Email: loginUser.email,
-            Actualización: firebase.database.ServerValue.TIMESTAMP,
-            Nombre: loginUser.displayName.split(" ")[0],
-            Apellido: loginUser.displayName.split(" ")[1],
-            Avatar: loginUser.providerData[0].photoURL,
-            "Nombre Completo": loginUser.displayName,
-            Teléfono: loginUser.phoneNumber,
+            id: LoginUser.uid,
+            Email: LoginUser.email,
+            Actualización: new Date(),
+            Nombre: LoginUser.displayName.split(" ").slice(0, -1).join(" "),
+            Apellido: LoginUser.displayName.split(" ").slice(-1).join(" "),
+            Avatar: LoginUser.providerData[0].photoURL,
+            "Nombre Completo": LoginUser.displayName,
           };
-          dbUsers.doc(user).set(newUser);
+          if (LoginUser.phoneNumber) newUser.Teléfono = LoginUser.phoneNumber;
+          dbUsers.doc(email).set(newUser);
           User = newUser;
         }
         document.forms[0]["Email"].disabled = true;
       });
   })();
-
+  /*
   if (id) {
     const user = id;
     dbUsers
@@ -62,7 +65,7 @@
         document.forms[0]["Email"].disabled = true;
       });
   }
-
+*/
   /* Auto Guardado de Datos en Firestore */
   function guardarDatos() {
     const form = document.forms[0];

@@ -40,7 +40,6 @@
   }
 </style>
 
-{@debug $displayPage}
 <main>
   <div class="menu">
     <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
