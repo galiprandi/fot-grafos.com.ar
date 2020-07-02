@@ -1,17 +1,16 @@
 <script>
-  import { loginUser } from "../store";
+  import { displayPage } from "../store.js";
 
-  export let id;
+  if (!auth.currentUser) {
+    console.log("El usuario no está logueado");
+    $displayPage = "Home";
+  }
+
   let User = {};
 
-  // id = id || $loginUser.email;
+  if (auth.currentUser) {
+    const email = auth.currentUser.email;
 
-  /* Si existe id busca el documento y carga sus datos */
-  (function cargarDatosDelUsuario() {
-    if (!LoginUser && !LoginUser.email) return false;
-    const email = LoginUser.email;
-
-    /* Buscar datos de Firebase */
     dbUsers
       .doc(email)
       .get()
@@ -38,34 +37,8 @@
         }
         document.forms[0]["Email"].disabled = true;
       });
-  })();
-  /*
-  if (id) {
-    const user = id;
-    dbUsers
-      .doc(user)
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          User = doc.data();
-        } else {
-          const newUser = {
-            id: $loginUser.email,
-            Email: $loginUser.email,
-            Actualización: new Date(),
-            Nombre: $loginUser.displayName.split(" ")[0],
-            Apellido: $loginUser.displayName.split(" ")[1],
-            Avatar: $loginUser.providerData[0].photoURL,
-            "Nombre Completo": $loginUser.displayName,
-            Teléfono: $loginUser.phoneNumber,
-          };
-          dbUsers.doc(user).set(newUser);
-          User = newUser;
-        }
-        document.forms[0]["Email"].disabled = true;
-      });
   }
-*/
+
   /* Auto Guardado de Datos en Firestore */
   function guardarDatos() {
     const form = document.forms[0];
@@ -87,6 +60,8 @@
   }
 
   async function chequearEmailValido() {
+    return;
+
     const input = document.forms[0]["Email"];
     input.setCustomValidity("");
     const valido = input.validity.valid;
@@ -124,22 +99,14 @@
   */
 </script>
 
-<style>
-  /*
-  #avatar {
-    max-width: 350px;
-    max-height: 350px;
-    margin: 0 auto;
-  }
-  */
-</style>
-
 <section>
-  {#if !id}
+  <!-- svelte-ignore missing-declaration -->
+  {#if !auth.currentUser}
     <h1 class="Inv">Darse de Alta</h1>
   {:else}
     <h1 class="title">Mis Datos</h1>
   {/if}
+
   <form on:change={guardarDatos} action="javascript:void(0);">
     <fieldset>
       <caption>Datos Personales</caption>
@@ -254,12 +221,6 @@
     <button on:click={guardarDatos} class="Inv" id="Guardar">
       Guardar Datos
     </button>
-    <!-- Eliminar Usuario -->
-    <button on:click={eliminarUsuario} class="Inv Com" id="Eliminar">
-      Eliminar Datos
-    </button>
   </form>
-  <script>
 
-  </script>
 </section>

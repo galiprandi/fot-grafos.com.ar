@@ -3,8 +3,6 @@
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
 
-  export let logg = true;
-
   auth.onAuthStateChanged((user) => {
     LoginUser = $loginUser = user;
   });
@@ -30,6 +28,7 @@
   }
   small.user {
     display: block;
+
     text-align: center;
   }
   a {
@@ -37,26 +36,27 @@
   }
 </style>
 
-<svelte:options accessors />
 <main>
   <div class="menu Inv">
     <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
       <li data-url="Home">Home</li>
-      {#if !!$loginUser}
+      <!-- svelte-ignore missing-declaration -->
+      {#if $loginUser}
         <li data-url="Mis Datos">Mis Datos</li>
       {:else}
-        <!-- svelte-ignore missing-declaration -->
         <li on:click={logIn}>Ingresar</li>
       {/if}
+
     </ul>
   </div>
   <section class="pages">
     {#if $displayPage == 'Home' || !$displayPage}
       <Home />
     {:else if $displayPage == 'Mis Datos'}
-      <EditUser id={$loginUser.email} />
+      <EditUser />
     {/if}
   </section>
+
   {#if $loginUser}
     <hr class="Sep" />
     <small class="user">
