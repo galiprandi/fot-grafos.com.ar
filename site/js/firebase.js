@@ -28,6 +28,7 @@ function logIn() {
     console.log(result.user);
   });
 }
+
 function logOut() {
   auth.signOut();
   editar = false;
