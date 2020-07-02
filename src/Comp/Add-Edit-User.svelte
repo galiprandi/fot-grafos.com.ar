@@ -6,10 +6,39 @@
 
   /* Si existe id busca el documento y carga sus datos */
   id = id || $loginUser.email;
+  (function cargarDatosDelUsuario() {
+    const id = LoginUser.email;
+    if (!id) {
+      return false;
+    }
+    console.log(id);
+    /* Buscar datos de Firebase */
+    dbUsers
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          User = doc.data();
+        } else {
+          const newUser = {
+            id: LoginUser.email,
+            Email: loginUser.email,
+            Actualización: firebase.database.ServerValue.TIMESTAMP,
+            Nombre: loginUser.displayName.split(" ")[0],
+            Apellido: loginUser.displayName.split(" ")[1],
+            Avatar: loginUser.providerData[0].photoURL,
+            "Nombre Completo": loginUser.displayName,
+            Teléfono: loginUser.phoneNumber,
+          };
+          dbUsers.doc(user).set(newUser);
+          User = newUser;
+        }
+        document.forms[0]["Email"].disabled = true;
+      });
+  })();
 
   if (id) {
     const user = id;
-    console.log(user);
     dbUsers
       .doc(user)
       .get()
@@ -25,6 +54,7 @@
             Apellido: $loginUser.displayName.split(" ")[1],
             Avatar: $loginUser.providerData[0].photoURL,
             "Nombre Completo": $loginUser.displayName,
+            Teléfono: $loginUser.phoneNumber,
           };
           dbUsers.doc(user).set(newUser);
           User = newUser;
@@ -105,7 +135,7 @@
   {#if !id}
     <h1 class="Inv">Darse de Alta</h1>
   {:else}
-    <h1 class="Inv">Editar Datos</h1>
+    <h1 class="title">Mis Datos</h1>
   {/if}
   <form on:change={guardarDatos} action="javascript:void(0);">
     <fieldset>
@@ -178,6 +208,7 @@
 
     </fieldset>
     <hr class="Sep" />
+    <hr class="Sep" />
     <fieldset>
 
       <caption>Redes sociales</caption>
@@ -217,20 +248,6 @@
         rows="10"
         placeholder="Opcional" />
     </fieldset>
-    <!-- Avatar
-    <hr class="Sep" />
-    <fieldset>
-      <caption>Logotipo o imagen de perfil</caption>
-      <img src="" class="avatar" id="avatar" />
-      <label for="Avatar">Seleccione un archivo</label>
-      <input
-        type="file"
-        id="imageFile"
-        name="Avatar"
-        on:change={() => uploadImagen()}
-        accept="image/png, image/jpeg, image/svg" />
-    </fieldset> 
-    -->
     <button on:click={guardarDatos} class="Inv" id="Guardar">
       Guardar Datos
     </button>

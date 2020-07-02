@@ -60,7 +60,10 @@
 
 <section>
 
-  <input id="buscar" type="search" placeholder="Buscar" />
+  <input
+    id="buscar"
+    type="search"
+    placeholder="Buscá fotógrafos de tu ciudad" />
 
   <table id="fotografos">
     <thead>

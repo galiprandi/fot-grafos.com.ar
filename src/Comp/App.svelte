@@ -1,18 +1,22 @@
 <script>
-  import { loginUser } from "../store.js";
+  import { loginUser, displayPage } from "../store.js";
 
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
 
-  let Page = "Home";
-
-  auth.onAuthStateChanged((user) => ($loginUser = user));
+  auth.onAuthStateChanged((user) => {
+    LoginUser = $loginUser = user;
+  });
 </script>
 
 <style>
   .menu {
     height: 60px;
+    background-color: #0f0f0f;
+    color: white;
+    border-radius: 10px;
   }
+
   ul {
     list-style: none;
     display: flex;
@@ -22,43 +26,46 @@
   ul li {
     color: var(--text);
     cursor: pointer;
+    color: inherit;
   }
   ul li:hover {
     color: var(--hover);
-    border-bottom: 1px solid;
   }
   small.user {
     display: block;
     text-align: center;
   }
+  a {
+    cursor: pointer;
+  }
 </style>
 
+{@debug $displayPage}
 <main>
   <div class="menu">
-    <ul on:click={(e) => (Page = e.target.dataset.url)} class="navbar">
+    <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
       <li data-url="Home">Home</li>
       {#if !!$loginUser}
-        <li data-url="MisDatos">Mis Datos</li>
+        <li data-url="Mis Datos">Mis Datos</li>
       {:else}
+        <!-- svelte-ignore missing-declaration -->
         <li on:click={logIn}>Ingresar</li>
       {/if}
-
     </ul>
   </div>
   <section class="pages">
-    {#if Page == 'Home'}
+    {#if $displayPage == 'Home'}
       <Home />
-    {:else if Page == 'MisDatos'}
+    {:else if $displayPage == 'Mis Datos'}
       <EditUser id={$loginUser.email} />
-    {:else if Page == 'Nuevo'}
-      <EditUser id="" />
     {/if}
   </section>
   {#if $loginUser}
     <hr class="Sep" />
     <small class="user">
       {$loginUser.displayName} -
-      <a on:click={logOut} class="">Cerrar sesión</a>
+      <!-- svelte-ignore missing-declaration -->
+      <a href on:click={logOut} class="">Cerrar sesión</a>
     </small>
   {/if}
 </main>

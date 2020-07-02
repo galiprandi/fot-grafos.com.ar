@@ -1,4 +1,5 @@
 // Your web app's Firebase configuration
+let LoginUser;
 var firebaseConfig = {
   apiKey: "AIzaSyCcYjzy_LNKlMU92EMRrPxYBBUJRKwMixY",
   authDomain: "fotografosapp.firebaseapp.com",
@@ -27,3 +28,5 @@ function logOut() {
   auth.signOut();
   editar = false;
 }
+
+auth.onAuthStateChanged((user) => (LoginUser = user));
