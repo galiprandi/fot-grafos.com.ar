@@ -9,7 +9,7 @@
   });
   */
 
-  $displayPage = "Mis Datos";
+  // $displayPage = "Mis Datos";
 </script>
 
 <style>

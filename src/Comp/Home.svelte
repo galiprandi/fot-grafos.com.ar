@@ -19,8 +19,8 @@
     <p>Puede buscar fotógrafos de tu ciudad o alrededores.</p>
     {#if !$loginUser}
       <p>
-        <button class="Out" on:click={() => ($displayPage = 'Mis Datos')}>
-          Si sos fotógrafos ingresá tus datos
+        <button class="" on:click={() => ($displayPage = 'Mis Datos')}>
+          Ingresá tus Datos
         </button>
         <!-- Si sos fotógrafo te invitamos a -->
         <!-- svelte-ignore missing-declaration -->
@@ -28,6 +28,5 @@
       </p>
     {/if}
   </div>
-  <hr class="Sep" />
   <Lista />
 </section>

@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { displayPage } from "../store.js";
   /*
   if (!auth.currentUser) {
@@ -7,6 +8,7 @@
   }
 */
   let User = {};
+  if (localStorage && localStorage.Email) User.Email = localStorage.Email;
 
   function actualizaDatos(id) {
     dbUsers
@@ -21,7 +23,8 @@
   }
 
   if (User.Email) {
-    const email = auth.currentUser.email;
+    // const email = auth.currentUser.email;
+    const email = User.Email;
     dbUsers
       .doc(email)
       .get()
@@ -77,6 +80,9 @@
 
     if (!valido) return false;
     const email = input.value;
+
+    // Guardo en Local
+    if (localStorage) localStorage.Email = email;
 
     /* Chequea si existe el email */
     const esValido = await dbUsers
