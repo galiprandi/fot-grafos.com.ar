@@ -1,5 +1,6 @@
 <script>
   let Fotografos = [];
+  let contador = 0;
   /* Actualización por única vez 
   dbUsers.get().then((docs) => {
     docs.forEach((doc) => {
@@ -37,6 +38,7 @@
         },
       ];
     });
+    contador = Fotografos.length;
   });
 
   function filtrarTabla() {
@@ -46,9 +48,17 @@
 
     function filtrar() {
       const query = new RegExp(input.value, "ig");
+      contador = 0;
       [...filas].map((fila) => {
-        const texto = fila.textContent;
-        fila.style.display = query.test(texto) ? "table-row" : "none";
+        // texto a buscar
+        const str = `${fila.dataset.nombre} ${fila.dataset.ciudad} ${fila.dataset.provincia} ${fila.dataset.pais} ${fila.dataset.email} ${fila.dataset.tel}`;
+        contador++;
+        if (query.test(str)) {
+          fila.style.display = "table-row";
+        } else {
+          fila.style.display = "none";
+          contador--;
+        }
       });
     }
 
@@ -124,7 +134,7 @@
   <table id="fotografos">
     <thead>
       <tr>
-        <th>Nombre</th>
+        <th>Nombre ({contador})</th>
         <th>Ciudad</th>
       </tr>
     </thead>
@@ -138,10 +148,9 @@
           data-tel={Tel}
           data-ciudad={Ciudad}
           data-provincia={Provincia}
-          data-pais={País}>
-          <th title="{Email} | {Tel}">
-            <a href="mailto:{Email}">{Nombre}</a>
-          </th>
+          data-pais={País}
+          title="{Email} | {Tel}">
+          <th>{Nombre}</th>
           <!-- <th>{Nombre}</th> -->
           <th>{Ciudad}</th>
         </tr>
