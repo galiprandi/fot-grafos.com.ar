@@ -11,12 +11,8 @@
 
 <style>
   .menu {
-    height: 60px;
-    background-color: #0f0f0f;
-    color: white;
-    border-radius: 10px;
+    border-radius: 5px;
   }
-
   ul {
     list-style: none;
     display: flex;
@@ -29,7 +25,7 @@
     color: inherit;
   }
   ul li:hover {
-    color: var(--hover);
+    color: var(--text);
   }
   small.user {
     display: block;
@@ -41,7 +37,7 @@
 </style>
 
 <main>
-  <div class="menu">
+  <div class="menu Inv">
     <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
       <li data-url="Home">Home</li>
       {#if !!$loginUser}

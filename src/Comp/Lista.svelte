@@ -2,9 +2,8 @@
   let Fotografos = [];
 
   dbUsers.onSnapshot((docs) => {
+    Fotografos = [];
     docs.forEach((doc) => {
-      Fotografos = [];
-
       Fotografos = [
         ...Fotografos,
         {
@@ -18,24 +17,6 @@
       ];
     });
   });
-
-  /*
-  dbUsers.get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      Fotografos = [
-        ...Fotografos,
-        {
-          Nombre:
-            doc.data()["Nombre Comercial"] ||
-            `${doc.data().Nombre} ${doc.data().Apellido}`,
-          Email: doc.id,
-          Tel: doc.data()["Teléfono"] ? `Tel: ${doc.data()["Teléfono"]}` : "",
-          Ciudad: doc.data().Ciudad || doc.data().Provincia || "",
-        },
-      ];
-    });
-  });
-  */
 
   function filtrarTabla() {
     const input = document.getElementById("buscar");
@@ -85,12 +66,12 @@
     type="search"
     placeholder="Buscá fotógrafos de tu ciudad" />
 
+  <hr class="Sep" />
   <table id="fotografos">
     <thead>
       <tr>
         <th>Nombre</th>
         <th>Ciudad</th>
-        <th />
       </tr>
     </thead>
 
@@ -110,6 +91,5 @@
         </tr>
       {/each}
     </tbody>
-
   </table>
 </section>
