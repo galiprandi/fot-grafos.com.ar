@@ -22,7 +22,12 @@ const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
 function logIn() {
-  firebase.auth().signInWithRedirect(provider);
+  //  auth.signInWithRedirect(provider);
+
+  auth.signInWithPopup(provider).then((result) => {
+    LoginUser = result.user;
+    console.log(result.user);
+  });
 }
 function logOut() {
   auth.signOut();
@@ -30,6 +35,6 @@ function logOut() {
 }
 
 auth.onAuthStateChanged((user) => {
-  console.log(user);
+  // console.log(user);
   LoginUser = user;
 });

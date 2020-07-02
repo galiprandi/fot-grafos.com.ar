@@ -1,8 +1,9 @@
 <script>
   import { loginUser, displayPage } from "../store.js";
-
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
+
+  export let logg = true;
 
   auth.onAuthStateChanged((user) => {
     LoginUser = $loginUser = user;
@@ -36,6 +37,7 @@
   }
 </style>
 
+<svelte:options accessors />
 <main>
   <div class="menu Inv">
     <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
@@ -49,7 +51,7 @@
     </ul>
   </div>
   <section class="pages">
-    {#if $displayPage == 'Home'}
+    {#if $displayPage == 'Home' || !$displayPage}
       <Home />
     {:else if $displayPage == 'Mis Datos'}
       <EditUser id={$loginUser.email} />
