@@ -1,14 +1,13 @@
 // Your web app's Firebase configuration
 let LoginUser;
-var firebaseConfig = {
-  apiKey: "AIzaSyCcYjzy_LNKlMU92EMRrPxYBBUJRKwMixY",
-  authDomain: "fotografosapp.firebaseapp.com",
-  databaseURL: "https://fotografosapp.firebaseio.com",
-  projectId: "fotografosapp",
-  storageBucket: "fotografosapp.appspot.com",
-  messagingSenderId: "711265217587",
-  appId: "1:711265217587:web:4948849c4b502440bc8746",
-  measurementId: "G-CZHRLD1EF6",
+const firebaseConfig = {
+  apiKey: "AIzaSyBdJ4J5W6jYzkwlnjnuCzEKe6UqEBcuux8",
+  authDomain: "fotografos-argentinos-eb9be.firebaseapp.com",
+  databaseURL: "https://fotografos-argentinos-eb9be.firebaseio.com",
+  projectId: "fotografos-argentinos-eb9be",
+  storageBucket: "fotografos-argentinos-eb9be.appspot.com",
+  messagingSenderId: "513249135364",
+  appId: "1:513249135364:web:384415f9e2f7a4dce2de51",
 };
 
 // Initialize Firebase
