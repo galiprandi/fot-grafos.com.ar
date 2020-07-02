@@ -29,4 +29,7 @@ function logOut() {
   editar = false;
 }
 
-auth.onAuthStateChanged((user) => (LoginUser = user));
+auth.onAuthStateChanged((user) => {
+  console.log(user);
+  LoginUser = user;
+});
