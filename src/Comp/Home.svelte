@@ -27,6 +27,7 @@
         <!-- <a href="#top" on:click|preventDefault={logIn}>ingresá tus datos.</a> -->
       </p>
     {/if}
+
   </div>
   <Lista />
 </section>

@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c; git add -A; git commit -m 'Auto Build'; git push",
     "dev": "rollup -c -w",
     "start": "sirv ./ --host 0.0.0.0"
   },
