@@ -3,9 +3,13 @@
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
 
+  /* Auth
   auth.onAuthStateChanged((user) => {
     LoginUser = $loginUser = user;
   });
+  */
+
+  $displayPage = "Mis Datos";
 </script>
 
 <style>
@@ -38,13 +42,13 @@
 
 <main>
   <div class="menu Inv">
-    <ul on:click={(e) => ($displayPage = e.target.dataset.url)} class="navbar">
-      <li data-url="Home">Home</li>
-      <!-- svelte-ignore missing-declaration -->
+    <ul on:click={(e) => ($displayPage = e.target.dataset.page)} class="navbar">
+      <li data-page="Home">Home</li>
+      <li data-page="Mis Datos">Mis Datos</li>
       {#if $loginUser}
-        <li data-url="Mis Datos">Mis Datos</li>
+        <!-- <li data-page="Mis Datos">Mis Datos</li> -->
       {:else}
-        <li on:click={logIn}>Ingresar</li>
+        <!-- <li on:click={logIn}>Ingresar</li> -->
       {/if}
 
     </ul>

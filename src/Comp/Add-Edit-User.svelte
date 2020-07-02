@@ -1,16 +1,27 @@
 <script>
   import { displayPage } from "../store.js";
-
+  /*
   if (!auth.currentUser) {
     console.log("El usuario no está logueado");
     $displayPage = "Home";
   }
-
+*/
   let User = {};
 
-  if (auth.currentUser) {
-    const email = auth.currentUser.email;
+  function actualizaDatos(id) {
+    dbUsers
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          User = doc.data();
+          User.Actualización = new Date();
+        }
+      });
+  }
 
+  if (User.Email) {
+    const email = auth.currentUser.email;
     dbUsers
       .doc(email)
       .get()
@@ -60,8 +71,6 @@
   }
 
   async function chequearEmailValido() {
-    return;
-
     const input = document.forms[0]["Email"];
     input.setCustomValidity("");
     const valido = input.validity.valid;
@@ -75,13 +84,16 @@
       .get()
       .then((doc) => {
         if (!doc.empty) {
-          /* el email ya existe */
-          const error = `${email} ya se existe !`;
-          console.error(error);
-          input.setCustomValidity(error);
-          input.placeholder = error;
-          input.value = "";
-          input.focus();
+          // el email ya existe
+          actualizaDatos(email);
+          input.disabled = true;
+
+          // const error = `${email} ya se existe !`;
+          // console.error(error);
+          // input.setCustomValidity(error);
+          // input.placeholder = error;
+          // input.value = "";
+          // input.focus();
         }
       });
     return esValido;
@@ -100,12 +112,7 @@
 </script>
 
 <section>
-  <!-- svelte-ignore missing-declaration -->
-  {#if !auth.currentUser}
-    <h1 class="Inv">Darse de Alta</h1>
-  {:else}
-    <h1 class="title">Mis Datos</h1>
-  {/if}
+  <h1 class="title">Mis Datos</h1>
 
   <form on:change={guardarDatos} action="javascript:void(0);">
     <fieldset>

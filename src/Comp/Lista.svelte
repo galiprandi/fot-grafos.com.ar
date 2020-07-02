@@ -1,6 +1,6 @@
 <script>
   let Fotografos = [];
-
+  /* Actualización por única vez 
   dbUsers.get().then((docs) => {
     docs.forEach((doc) => {
       Fotografos = [
@@ -18,8 +18,8 @@
       ];
     });
   });
-
-  /* 
+*/
+  /* Actualización automática de la lista */
   dbUsers.onSnapshot((docs) => {
     Fotografos = [];
     docs.forEach((doc) => {
@@ -38,7 +38,7 @@
       ];
     });
   });
-*/
+
   function filtrarTabla() {
     const input = document.getElementById("buscar");
     const tabla = document.getElementById("fotografos");

@@ -15,9 +15,10 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 const dbUsers = db.collection("fotografos");
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+// const auth = firebase.auth();
+// const provider = new firebase.auth.GoogleAuthProvider();
 
+/*
 function logIn() {
   auth.signInWithRedirect(provider);
   // auth.signInWithPopup(provider).then((result) => {
@@ -31,6 +32,7 @@ function logOut() {
   editar = false;
 }
 
+
 auth.onAuthStateChanged((user) => {
   // console.log(user);
   LoginUser = user;
@@ -43,3 +45,4 @@ firebase
     LoginUser = result.user;
     console.log(LoginUser);
   });
+*/

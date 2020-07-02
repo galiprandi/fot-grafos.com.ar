@@ -1,7 +1,5 @@
 <script>
-  import { loginUser } from "../store.js";
-
-  import Busqueda from "./Buscar-Zona.svelte";
+  import { loginUser, displayPage } from "../store.js";
   import Lista from "./Lista.svelte";
 </script>
 
@@ -21,13 +19,15 @@
     <p>Puede buscar fotógrafos de tu ciudad o alrededores.</p>
     {#if !$loginUser}
       <p>
-        Si sos fotógrafo te invitamos a
+        <button class="Out" on:click={() => ($displayPage = 'Mis Datos')}>
+          Si sos fotógrafos ingresá tus datos
+        </button>
+        <!-- Si sos fotógrafo te invitamos a -->
         <!-- svelte-ignore missing-declaration -->
-        <a href="#top" on:click|preventDefault={logIn}>ingresá tus datos.</a>
+        <!-- <a href="#top" on:click|preventDefault={logIn}>ingresá tus datos.</a> -->
       </p>
     {/if}
   </div>
   <hr class="Sep" />
   <Lista />
-  <!-- <Busqueda /> -->
 </section>
