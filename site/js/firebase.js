@@ -37,3 +37,11 @@ auth.onAuthStateChanged((user) => {
   // console.log(user);
   LoginUser = user;
 });
+
+firebase
+  .auth()
+  .getRedirectResult()
+  .then(function (result) {
+    LoginUser = result.user;
+    console.log(LoginUser);
+  });
