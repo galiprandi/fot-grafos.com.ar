@@ -5,18 +5,6 @@
   let Contador = 0;
   let Dataset = [];
 
-  // Capitalize the first letter of each word of a given string
-  // Usage: 'capItalezE aLl fIrSt leTTers'.capitalize()
-  String.prototype.capitalize = function () {
-    if (!this || !typeof this === "string") return;
-    return this.trim()
-      .split(" ")
-      .reduce(
-        (text, word) => text + " " + word[0].toUpperCase() + word.substr(1),
-        ""
-      );
-  };
-
   /* Actualización automática de la lista */
   dbUsers.onSnapshot((docs) => {
     Fotografos = [];
@@ -92,6 +80,18 @@
     const modal = document.querySelector(".modal");
     modal.style.display = "none";
   }
+
+  // Capitalize the first letter of each word of a given string
+  // Usage: 'capItalezE aLl fIrSt leTTers'.capitalize()
+  String.prototype.capitalize = function () {
+    if (!this || !typeof this === "string") return;
+    return this.trim()
+      .split(" ")
+      .reduce(
+        (text, word) => text + " " + word[0].toUpperCase() + word.substr(1),
+        ""
+      );
+  };
 
   /* Actualización por única vez 
   dbUsers.get().then((docs) => {
