@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from "svelte";
-  import { displayPage } from "../store.js";
+  // import { onMount } from "svelte";
+  // import { displayPage } from "../store.js";
   /*
   if (!auth.currentUser) {
     console.log("El usuario no está logueado");
@@ -212,10 +212,10 @@
         type="text"
         placeholder="Opcional" />
 
-      <label for="Tweeter">Tweeter</label>
+      <label for="Twitter">Twitter</label>
       <input
-        bind:value={User.Tweeter}
-        name="Tweeter"
+        bind:value={User.Twitter}
+        name="Twitter"
         type="text"
         placeholder="Opcional" />
 
