@@ -5,7 +5,7 @@
 
 <style>
   .head h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   .head p {
     text-align: center;
