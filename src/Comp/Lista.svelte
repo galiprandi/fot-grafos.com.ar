@@ -84,7 +84,7 @@
   // Capitalize the first letter of each word of a given string
   // Usage: 'capItalezE aLl fIrSt leTTers'.capitalize()
   String.prototype.capitalize = function () {
-    if (!!this || !typeof this === "string") return;
+    if (!this || !typeof this === "string") return this;
     return this.trim()
       .split(" ")
       .reduce(
