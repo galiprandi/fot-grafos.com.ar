@@ -2,7 +2,7 @@
   import { each } from "svelte/internal";
 
   let Fotografos = [];
-  let Contador = 0;
+  let Contador = "";
   let Dataset = [];
 
   /* Actualización automática de la lista */
@@ -117,6 +117,14 @@
 <style>
   input {
     width: 100%;
+  }
+
+  th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    font-size: 0.95rem;
   }
   .modal {
     display: none;
