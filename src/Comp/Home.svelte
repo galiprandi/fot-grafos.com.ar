@@ -16,7 +16,7 @@
   <div class="head">
 
     <h1>Fotógrafos Argentinos</h1>
-    <p>Puede buscar fotógrafos de tu ciudad o alrededores.</p>
+    <p>¡Podes buscar en tu ciudad o alrededores!</p>
     {#if !$loginUser}
       <p>
         <button class="" on:click={() => ($displayPage = 'Mis Datos')}>
