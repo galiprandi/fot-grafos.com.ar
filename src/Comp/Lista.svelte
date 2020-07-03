@@ -1,11 +1,30 @@
 <script>
+  import { each } from "svelte/internal";
+
   let Fotografos = [];
-  let contador = 0;
+  let Contador = 0;
+  let Dataset = [];
+
+  // Capitalize the first letter of each word of a given string
+  // Usage: 'capItalezE aLl fIrSt leTTers'.capitalize()
+  String.prototype.capitalize = function () {
+    if (!this || !typeof this === "string") return;
+    return this.trim()
+      .split(" ")
+      .reduce(
+        (text, word) => text + " " + word[0].toUpperCase() + word.substr(1),
+        ""
+      );
+  };
 
   /* Actualización automática de la lista */
   dbUsers.onSnapshot((docs) => {
     Fotografos = [];
     docs.forEach((doc) => {
+      Dataset.push(
+        doc.data().Ciudad.capitalize(),
+        doc.data().Provincia.capitalize()
+      );
       Fotografos = [
         ...Fotografos,
         {
@@ -20,8 +39,9 @@
         },
       ];
     });
-    contador = Fotografos.length;
+    Contador = Fotografos.length;
     Fotografos = [...Fotografos].sort(() => 0.5 - Math.random());
+    Dataset = [...new Set(Dataset)];
   });
 
   function filtrarTabla() {
@@ -31,16 +51,16 @@
 
     function filtrar() {
       const query = new RegExp(input.value, "ig");
-      contador = 0;
+      Contador = 0;
       [...filas].map((fila) => {
         // texto a buscar
         const str = `${fila.dataset.nombre} ${fila.dataset.ciudad} ${fila.dataset.provincia} ${fila.dataset.pais} ${fila.dataset.email} ${fila.dataset.tel}`;
-        contador++;
+        Contador++;
         if (query.test(str)) {
           fila.style.display = "table-row";
         } else {
           fila.style.display = "none";
-          contador--;
+          Contador--;
         }
       });
     }
@@ -127,17 +147,21 @@
 </style>
 
 <section>
-
   <input
     id="buscar"
     type="search"
+    list="datalist"
     placeholder="Buscá fotógrafos de tu ciudad" />
-
+  <datalist id="datalist">
+    {#each Dataset as item}
+      <option value={item} />
+    {/each}
+  </datalist>
   <hr class="Sep" />
   <table id="fotografos">
     <thead>
       <tr>
-        <th>Nombre ({contador})</th>
+        <th>Nombre ({Contador})</th>
         <th>Ciudad</th>
       </tr>
     </thead>
