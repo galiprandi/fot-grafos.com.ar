@@ -4,13 +4,10 @@
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
 
-  /* Auth
+  // Auth
   auth.onAuthStateChanged((user) => {
-    LoginUser = $loginUser = user;
+    $loginUser = user;
   });
-  */
-
-  // $displayPage = "Mis Datos";
 </script>
 
 <style>
@@ -61,15 +58,5 @@
       <EditUser />
     {/if}
   </section>
-
-  {#if $loginUser}
-    <hr class="Sep" />
-    <small class="user">
-      {$loginUser.displayName} -
-      <!-- svelte-ignore missing-declaration -->
-      <a href on:click={logOut} class="">Cerrar sesión</a>
-    </small>
-  {/if}
-
   <Footer />
 </main>
