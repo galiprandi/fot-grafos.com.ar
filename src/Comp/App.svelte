@@ -1,5 +1,6 @@
 <script>
   import { loginUser, displayPage } from "../store.js";
+  import Footer from "./Footer.svelte";
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
 
@@ -69,4 +70,6 @@
       <a href on:click={logOut} class="">Cerrar sesión</a>
     </small>
   {/if}
+
+  <Footer />
 </main>

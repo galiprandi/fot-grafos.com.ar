@@ -15,8 +15,8 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 const dbUsers = db.collection("fotografos");
-// const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
 
 // Delete user by ID
 // return true / false
@@ -40,8 +40,7 @@ function deleteUserById(id) {
   } else return false;
 }
 
-/*
-function logIn() {
+function iniciarSesion() {
   auth.signInWithRedirect(provider);
   // auth.signInWithPopup(provider).then((result) => {
   //   LoginUser = result.user;
@@ -49,12 +48,11 @@ function logIn() {
   // });
 }
 
-function logOut() {
+function cerrarSesion() {
   auth.signOut();
-  editar = false;
 }
 
-
+/*
 auth.onAuthStateChanged((user) => {
   // console.log(user);
   LoginUser = user;
