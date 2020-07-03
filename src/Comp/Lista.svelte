@@ -1,25 +1,7 @@
 <script>
   let Fotografos = [];
   let contador = 0;
-  /* Actualización por única vez 
-  dbUsers.get().then((docs) => {
-    docs.forEach((doc) => {
-      Fotografos = [
-        ...Fotografos,
-        {
-          Nombre:
-            doc.data()["Nombre Comercial"] ||
-            `${doc.data().Nombre} ${doc.data().Apellido}`,
-          Email: doc.id,
-          Tel: doc.data()["Teléfono"] || "",
-          Ciudad: doc.data().Ciudad || doc.data().Provincia || "",
-          Provincia: doc.data().Provincia || doc.data().Provincia || "",
-          País: doc.data().País,
-        },
-      ];
-    });
-  });
-*/
+
   /* Actualización automática de la lista */
   dbUsers.onSnapshot((docs) => {
     Fotografos = [];
@@ -39,6 +21,7 @@
       ];
     });
     contador = Fotografos.length;
+    Fotografos = [...Fotografos].sort(() => 0.5 - Math.random());
   });
 
   function filtrarTabla() {
@@ -76,7 +59,6 @@
     const modal = document.querySelector(".modal");
 
     modal.style.display = "block";
-    console.log(el.dataset);
     modal.childNodes[0].innerText = data.nombre; // Nombre
 
     modal.childNodes[2].href = `tel:+${data.tel}`; // Teléfono
@@ -90,6 +72,26 @@
     const modal = document.querySelector(".modal");
     modal.style.display = "none";
   }
+
+  /* Actualización por única vez 
+  dbUsers.get().then((docs) => {
+    docs.forEach((doc) => {
+      Fotografos = [
+        ...Fotografos,
+        {
+          Nombre:
+            doc.data()["Nombre Comercial"] ||
+            `${doc.data().Nombre} ${doc.data().Apellido}`,
+          Email: doc.id,
+          Tel: doc.data()["Teléfono"] || "",
+          Ciudad: doc.data().Ciudad || doc.data().Provincia || "",
+          Provincia: doc.data().Provincia || doc.data().Provincia || "",
+          País: doc.data().País,
+        },
+      ];
+    });
+  });
+*/
 </script>
 
 <style>
@@ -120,6 +122,7 @@
   .modal button {
     margin: auto;
     line-height: inherit;
+    border-color: white;
   }
 </style>
 
