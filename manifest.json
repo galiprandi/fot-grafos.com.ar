@@ -1,0 +1,17 @@
+{
+  "name": "Fotógrafos Argentinos",
+  "short_name": "Foto.Ar",
+  "theme_color": "#e63946",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "site/imagenes/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "badge"
+    }
+  ]
+}

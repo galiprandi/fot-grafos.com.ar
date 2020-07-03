@@ -230,6 +230,7 @@
     <button on:click={guardarDatos} class="Inv" id="Guardar">
       Guardar Datos
     </button>
+    <!-- svelte-ignore missing-declaration -->
     <button on:click={() => deleteUserById(User.Email)} class="Out">
       BORRAR MIS DATOS
     </button>
