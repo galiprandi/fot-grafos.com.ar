@@ -18,6 +18,28 @@ const dbUsers = db.collection("fotografos");
 // const auth = firebase.auth();
 // const provider = new firebase.auth.GoogleAuthProvider();
 
+// Delete user by ID
+// return true / false
+function deleteUserById(id) {
+  console.log(!!id);
+  if (!id) {
+    console.error("User Id no defined");
+    return false;
+  }
+  const response = window.confirm(
+    "¿ Está seguro que desea eliminar sus datos ?\n"
+  );
+  if (response) {
+    dbUsers
+      .doc(id)
+      .delete()
+      .then(() => {
+        localStorage.removeItem("Email");
+        return true;
+      });
+  } else return false;
+}
+
 /*
 function logIn() {
   auth.signInWithRedirect(provider);

@@ -63,16 +63,6 @@
     dbUsers.doc(email).set(User);
   }
 
-  function eliminarUsuario() {
-    const response = window.confirm("¿ Desea eliminar los Datos del usuario ?");
-    console.log(response);
-    if (response)
-      dbUsers
-        .doc(User.Email)
-        .delete()
-        .then(() => {});
-  }
-
   async function chequearEmailValido() {
     const input = document.forms[0]["Email"];
     input.setCustomValidity("");
@@ -116,6 +106,12 @@
   }
   */
 </script>
+
+<style>
+  button {
+    text-align: center;
+  }
+</style>
 
 <section>
   <h1 class="title">Mis Datos</h1>
@@ -233,6 +229,9 @@
     </fieldset>
     <button on:click={guardarDatos} class="Inv" id="Guardar">
       Guardar Datos
+    </button>
+    <button on:click={() => deleteUserById(User.Email)} class="Out">
+      BORRAR MIS DATOS
     </button>
 
   </form>
