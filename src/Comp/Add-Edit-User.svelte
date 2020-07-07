@@ -1,13 +1,7 @@
 <script>
-  // import { onMount } from "svelte";
-  // import { displayPage } from "../store.js";
-  /*
-  if (!auth.currentUser) {
-    console.log("El usuario no está logueado");
-    $displayPage = "Home";
-  }
-*/
   let User = {};
+  let Municipios;
+
   if (localStorage && localStorage.Email) User.Email = localStorage.Email;
 
   function actualizaDatos(id) {
@@ -95,6 +89,26 @@
     return esValido;
   }
 
+  async function cargaMunicipios(provincia) {
+    Municipios = await obtenerMunicipios(provincia);
+    console.log(Municipios);
+  }
+
+  async function obtenerMunicipios(provincia = "") {
+    if (provincia) provincia = `&provincia=${provincia}`;
+    const url = `https://apis.datos.gob.ar/georef/api/municipios?max=5000${provincia}`;
+    const fetchData = await fetch(url);
+    const data = await fetchData.json();
+    const reduce = data.municipios.reduce((accu, item) => {
+      const municipio = item.nombre;
+      const provincia = item.provincia.nombre;
+      const geoloc = item.centroide;
+      return [...accu, municipio];
+    }, "");
+    const results = [...new Set(reduce)];
+    return results;
+  }
+
   /*
   function uploadImagen() {
     const file = document.getElementById("imageFile").files[0];
@@ -156,7 +170,11 @@
         <option value="Argentina">Argentina</option>
       </select>
       <label for="Provincia">Provincia</label>
-      <select bind:value={User.Provincia} name="Provincia" required>
+      <select
+        on:input={(e) => cargaMunicipios(e.target.value)}
+        bind:value={User.Provincia}
+        name="Provincia"
+        required>
         <option value="Buenos Aires">Bs. As.</option>
         <option value="Catamarca">Catamarca</option>
         <option value="Chaco">Chaco</option>
@@ -183,8 +201,18 @@
       </select>
 
       <label for="Ciudad">Ciudad</label>
-      <input bind:value={User.Ciudad} name="Ciudad" type="text" />
-
+      <input
+        bind:value={User.Ciudad}
+        name="Ciudad"
+        type="text"
+        list="Municipios" />
+      {#if Municipios}
+        <datalist id="Municipios">
+          {#each Municipios as item}
+            <option value={item} />
+          {/each}
+        </datalist>
+      {/if}
     </fieldset>
     <hr class="Sep" />
     <hr class="Sep" />

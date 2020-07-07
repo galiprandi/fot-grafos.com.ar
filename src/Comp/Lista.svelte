@@ -9,10 +9,8 @@
   dbUsers.onSnapshot((docs) => {
     Fotografos = [];
     docs.forEach((doc) => {
-      Dataset.push(
-        doc.data().Ciudad.capitalize(),
-        doc.data().Provincia.capitalize()
-      );
+      if (doc.data().Ciudad) Dataset.push(doc.data().Ciudad.capitalize());
+      if (doc.data().Provincia) Dataset.push(doc.data().Provincia.capitalize());
       Fotografos = [
         ...Fotografos,
         {
@@ -169,7 +167,10 @@
   <table id="fotografos">
     <thead>
       <tr>
-        <th>Nombre ({Contador})</th>
+        <th>
+          Nombre
+          {#if !!Contador}({Contador}){/if}
+        </th>
         <th>Ciudad</th>
       </tr>
     </thead>
