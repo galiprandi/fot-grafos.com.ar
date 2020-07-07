@@ -171,6 +171,7 @@
       </select>
       <label for="Provincia">Provincia</label>
       <select
+        on:focus={(e) => cargaMunicipios(e.target.value)}
         on:input={(e) => cargaMunicipios(e.target.value)}
         bind:value={User.Provincia}
         name="Provincia"
@@ -207,7 +208,7 @@
         type="text"
         list="Municipios" />
       {#if Municipios}
-        <datalist id="Municipios">
+        <datalist id="Municipios" style="display: none">
           {#each Municipios as item}
             <option value={item} />
           {/each}
