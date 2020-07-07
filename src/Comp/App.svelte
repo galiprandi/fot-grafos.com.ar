@@ -12,23 +12,7 @@
 </script>
 
 <style>
-  .menu {
-    border-radius: 5px;
-  }
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-  }
-  ul li {
-    color: var(--text);
-    cursor: pointer;
-    color: inherit;
-  }
-  ul li:hover {
-    color: var(--text);
-  }
+
 </style>
 
 <main>
