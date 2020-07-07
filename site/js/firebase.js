@@ -49,5 +49,6 @@ function iniciarSesion() {
 }
 
 function cerrarSesion() {
-  auth.signOut();
+  const respuesta = window.confirm("¿ Salir del sistema ?");
+  if (respuesta) auth.signOut();
 }

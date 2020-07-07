@@ -1,8 +1,11 @@
 <script>
+  import { loginUser } from "../store";
+
   let User = {};
   let Municipios;
 
   if (localStorage && localStorage.Email) User.Email = localStorage.Email;
+  if ($loginUser) User.Email = $loginUser.email;
 
   function actualizaDatos(id) {
     dbUsers
@@ -91,7 +94,6 @@
 
   async function cargaMunicipios(provincia) {
     Municipios = await obtenerMunicipios(provincia);
-    console.log(Municipios);
   }
 
   async function obtenerMunicipios(provincia = "") {

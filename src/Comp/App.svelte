@@ -1,5 +1,6 @@
 <script>
   import { loginUser, displayPage } from "../store.js";
+  import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
   import Home from "./Home.svelte";
   import EditUser from "./Add-Edit-User.svelte";
@@ -31,18 +32,8 @@
 </style>
 
 <main>
-  <div class="menu Inv">
-    <ul on:click={(e) => ($displayPage = e.target.dataset.page)} class="navbar">
-      <li data-page="Home">Home</li>
-      <li data-page="Mis Datos">Mis Datos</li>
-      {#if $loginUser}
-        <!-- <li data-page="Mis Datos">Mis Datos</li> -->
-      {:else}
-        <!-- <li on:click={logIn}>Ingresar</li> -->
-      {/if}
+  <Header />
 
-    </ul>
-  </div>
   <section class="pages">
     {#if $displayPage == 'Home' || !$displayPage}
       <Home />
