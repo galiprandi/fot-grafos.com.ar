@@ -58,7 +58,7 @@
       <!-- <li data-page="Mis Datos">Mis Datos</li> -->
     {:else}
       <!-- svelte-ignore missing-declaration -->
-      <li on:click={iniciarSesion}>Iniciar Sesión</li>
+      <li on:click={iniciarSesion}>Ingresar</li>
     {/if}
 
   </ul>
