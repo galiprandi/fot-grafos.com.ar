@@ -28,14 +28,6 @@
   ul li:hover {
     color: var(--text);
   }
-  small.user {
-    display: block;
-
-    text-align: center;
-  }
-  a {
-    cursor: pointer;
-  }
 </style>
 
 <main>
