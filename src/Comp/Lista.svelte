@@ -11,32 +11,23 @@
     docs.forEach((doc) => {
       if (doc.data().Ciudad) Dataset.push(doc.data().Ciudad.capitalize());
       if (doc.data().Provincia) Dataset.push(doc.data().Provincia.capitalize());
-      Fotografos = [
-        ...Fotografos,
-        {
-          Nombre:
-            doc.data()["Nombre Comercial"] ||
-            `${doc.data().Nombre} ${doc.data().Apellido}`,
-          Email: doc.id,
-          Tel: doc.data()["Teléfono"] || "",
-          Ciudad: doc.data().Ciudad || doc.data().Provincia || "",
-          Provincia: doc.data().Provincia || doc.data().Provincia || "",
-          País: doc.data().País,
-        },
-      ];
+      Fotografos = [...Fotografos, doc.data()];
     });
     Contador = Fotografos.length;
     Fotografos = [...Fotografos].sort(() => 0.5 - Math.random());
+
     Dataset = [...new Set(Dataset)];
   });
 
   function filtrarTabla() {
-    const input = document.getElementById("buscar");
     const tabla = document.getElementById("fotografos");
+    const input = document.getElementById("buscar");
     const filas = tabla.tBodies[0].childNodes;
 
     function filtrar() {
       const query = new RegExp(input.value, "ig");
+      console.log(query);
+
       Contador = 0;
       [...filas].map((fila) => {
         // texto a buscar
@@ -65,14 +56,24 @@
     const modal = document.querySelector(".modal");
 
     modal.style.display = "block";
-    modal.childNodes[0].innerText = data.nombre; // Nombre
 
-    modal.childNodes[2].href = `tel:+${data.tel}`; // Teléfono
-    modal.childNodes[2].innerText = data.tel ? `Tel: ${data.tel}` : ""; // Teléfono
+    // Nombre
+    modal.childNodes[0].textContent = data.nombre || "";
 
-    modal.childNodes[4].href = `mailto:${data.email}`; // Email
-    modal.childNodes[4].innerText = data.email; // Email
-    modal.childNodes[6].innerText = `${data.ciudad}, ${data.provincia}`; // Ciudad y Provincia
+    // Website
+    modal.childNodes[2].textContent = data.website;
+    modal.childNodes[2].href = `//${data.website}`;
+
+    // Email
+    modal.childNodes[4].textContent = data.email;
+    modal.childNodes[4].href = `mailto:${data.email}`;
+
+    // Teléfono
+    modal.childNodes[6].textContent = data.tel ? `Tel: ${data.tel}` : "";
+    modal.childNodes[6].href = `tel:${data.tel}`;
+
+    // Ciudad y Provincia
+    modal.childNodes[8].textContent = `${data.ciudad}, ${data.provincia}`;
   }
   function cerrarModal() {
     const modal = document.querySelector(".modal");
@@ -117,12 +118,23 @@
     width: 100%;
   }
 
+  label {
+    margin: 0;
+    display: block;
+    text-align: center;
+  }
+  table tbody th {
+    font-weight: normal;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
   th {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 10px;
-    font-size: 0.95rem;
+    padding: 10px 5px;
+    font-size: 1rem;
   }
   .modal {
     display: none;
@@ -153,6 +165,9 @@
 </style>
 
 <section>
+  <hr class="Sep" />
+
+  <label for="buscar">{`${Contador} fotógrafos`}</label>
   <input
     id="buscar"
     type="search"
@@ -163,41 +178,41 @@
       <option value={item} />
     {/each}
   </datalist>
-  <hr class="Sep" />
+
   <table id="fotografos">
     <thead>
       <tr>
-        <th>
-          Nombre
-          {#if !!Contador}({Contador}){/if}
-        </th>
+        <th>Nombre</th>
         <th>Ciudad</th>
       </tr>
     </thead>
 
     <tbody>
-      {#each Fotografos as { Email, Nombre, Ciudad, Tel, Provincia, País }}
+      {#each Fotografos as item}
         <tr
-          on:click={mostrarInfo}
-          data-nombre={Nombre}
-          data-email={Email}
-          data-tel={Tel}
-          data-ciudad={Ciudad}
-          data-provincia={Provincia}
-          data-pais={País}
-          title="{Email} | {Tel}">
-          <th>{Nombre}</th>
-          <!-- <th>{Nombre}</th> -->
-          <th>{Ciudad}</th>
+          data-nombre={item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
+          data-email={item.Email}
+          data-website={item.Website}
+          data-tel={item.Teléfono || ''}
+          data-ciudad={item.Ciudad || ''}
+          data-provincia={item.Provincia}
+          on:click={mostrarInfo}>
+          <th>
+            {item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
+          </th>
+          <th>{item.Ciudad || item.Provincia}</th>
+
         </tr>
       {/each}
     </tbody>
   </table>
+
   <div class="modal Inv ">
-    <h1>Germán Aliprandi</h1>
-    <a href>.</a>
-    <a href>.</a>
-    <span>.</span>
+    <h1>Nombre</h1>
+    <a href target="_blank">Website</a>
+    <a href>Email</a>
+    <a href>Tel</a>
+    <span>Ciudad y Provincia</span>
     <hr class="Sep" />
     <button class="Sol Inv" on:click={cerrarModal}>CERRAR</button>
   </div>
