@@ -123,18 +123,25 @@
     display: block;
     text-align: center;
   }
+
+  table {
+    line-height: 3;
+  }
   table tbody th {
     font-weight: normal;
     font-size: 0.85rem;
     letter-spacing: 1px;
+    height: 3rem;
   }
 
   th {
+    /*
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 10px 5px;
     font-size: 1rem;
+    */
   }
   .modal {
     display: none;
@@ -146,7 +153,7 @@
     transform: translate(-50%, -50%);
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0 0 2px 0;
+    box-shadow: 0 0 3px 0 grey;
   }
   .modal > * {
     display: block;
