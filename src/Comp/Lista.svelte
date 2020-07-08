@@ -165,8 +165,6 @@
 </style>
 
 <section>
-  <hr class="Sep" />
-
   <label for="buscar">{`${Contador} fotógrafos`}</label>
   <input
     id="buscar"
