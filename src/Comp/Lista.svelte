@@ -133,16 +133,6 @@
     letter-spacing: 1px;
     height: 3rem;
   }
-
-  th {
-    /*
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 10px 5px;
-    font-size: 1rem;
-    */
-  }
   .modal {
     display: none;
     text-align: center;
