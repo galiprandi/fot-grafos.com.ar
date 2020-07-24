@@ -3,6 +3,9 @@
 </script>
 
 <style>
+  .logo {
+    width: 100px;
+  }
   nav {
     padding: 0;
   }
@@ -37,29 +40,32 @@
   }
 </style>
 
-<nav class="Sol Inv">
-  <ul on:click={(e) => ($displayPage = e.target.dataset.page)} class="navbar">
-    <li data-page="Home">
-      <img
-        src="/site/imagenes/logo.svg"
-        id="logo"
-        alt="Fotógrafos Argentinos" />
-      Inicio
-    </li>
-    <li data-page="Mis Datos">Mis Datos</li>
-    {#if $loginUser}
-      <!-- svelte-ignore missing-declaration -->
-      <li on:click={cerrarSesion} class="avatar">
+<header>
+  <nav class="Sin Inv">
+    <ul on:click={(e) => ($displayPage = e.target.dataset.page)} class="navbar">
+      <li />
+      <li data-page="Home">
         <img
-          src={$loginUser.providerData[0].photoURL}
-          alt={$loginUser.displayName}
-          title={$loginUser.displayName} />
+          src="/site/imagenes/logo.svg"
+          id="logo"
+          alt="Fotógrafos Argentinos" />
+        Inicio
       </li>
-      <!-- <li data-page="Mis Datos">Mis Datos</li> -->
-    {:else}
-      <!-- svelte-ignore missing-declaration -->
-      <li on:click={iniciarSesion}>Ingresar</li>
-    {/if}
+      <li data-page="Mis Datos">Mis Datos</li>
+      {#if $loginUser}
+        <!-- svelte-ignore missing-declaration -->
+        <li on:click={cerrarSesion} class="avatar">
+          <img
+            src={$loginUser.providerData[0].photoURL}
+            alt={$loginUser.displayName}
+            title={$loginUser.displayName} />
+        </li>
+        <!-- <li data-page="Mis Datos">Mis Datos</li> -->
+      {:else}
+        <!-- svelte-ignore missing-declaration -->
+        <li on:click={iniciarSesion}>Ingresar</li>
+      {/if}
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</header>

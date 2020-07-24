@@ -26,7 +26,6 @@
 
     function filtrar() {
       const query = new RegExp(input.value, "ig");
-      console.log(query);
 
       Contador = 0;
       [...filas].map((fila) => {

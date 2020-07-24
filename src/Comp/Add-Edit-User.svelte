@@ -30,9 +30,7 @@
           User = doc.data();
           User.Actualización = new Date();
         } else {
-          console.log(
-            `El ususario ${LoginUser.displayName} no existe en la base de datos y se creará`
-          );
+          console.log(`El ususario no existe en la base de datos y se creará`);
           const newUser = {
             id: LoginUser.uid,
             Email: LoginUser.email,
@@ -46,7 +44,7 @@
           dbUsers.doc(email).set(newUser);
           User = newUser;
         }
-        document.forms[0]["Email"].disabled = true;
+        // document.forms[0]["Email"].disabled = true;
       });
   }
 
