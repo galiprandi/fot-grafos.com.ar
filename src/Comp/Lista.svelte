@@ -142,6 +142,10 @@
     width: 40%;
   }
 
+  table tbody {
+    cursor: pointer;
+  }
+
   .modal {
     display: none;
     text-align: center;
