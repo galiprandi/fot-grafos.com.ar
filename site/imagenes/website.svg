@@ -7,100 +7,105 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="96"
-   inkscape:export-xdpi="96"
-   inkscape:export-filename="/mnt/datos/websites/fotógrafos.com.ar/firebase/site/imagenes/logo.png"
-   sodipodi:docname="logo.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   id="svg8"
+   width="360"
+   height="740"
+   viewBox="0 0 95.250003 195.79167"
    version="1.1"
-   viewBox="0 0 135.46666 135.46667"
-   height="512"
-   width="512">
+   id="svg956"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="website.svg">
   <defs
-     id="defs2">
-    <rect
-       x="-17.518698"
-       y="-10.745126"
-       width="184.31529"
-       height="164.84388"
-       id="rect852" />
-  </defs>
+     id="defs950" />
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:window-height="1016"
-     inkscape:window-width="1920"
-     units="px"
-     showgrid="false"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="mm"
-     inkscape:cy="256"
-     inkscape:cx="256"
-     inkscape:zoom="1.139381"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
-     pagecolor="#ffffff"
      id="base"
-     inkscape:snap-text-baseline="true" />
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.1148649"
+     inkscape:cx="-50.072727"
+     inkscape:cy="370"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:pagecheckerboard="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata5">
+     id="metadata953">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
+     inkscape:label="Capa 1"
      inkscape:groupmode="layer"
-     inkscape:label="Capa 1">
+     id="layer1">
     <rect
-       style="fill:#b5191a;fill-opacity:1;stroke-width:3.48197;stroke-linecap:round"
-       id="rect19"
-       width="135.46666"
-       height="70.909584"
-       x="3.5603841e-06"
-       y="32.278542"
+       style="fill:#ffffff;fill-opacity:1;stroke:#b5191a;stroke-width:0.231083;stroke-linecap:round"
+       id="rect1148"
+       width="37.754089"
+       height="8.2532415"
+       x="29.01038"
+       y="27.236555"
        ry="0" />
     <g
-       id="g879"
-       transform="matrix(0.86239219,0,0,0.86239219,5.8856234,9.320643)">
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       id="g1061"
+       transform="matrix(0.49875788,0,0,0.49875788,-21.443562,-0.3743611)">
+      <rect
+         ry="0"
+         y="7.6596212"
+         x="50.951199"
+         height="20.470093"
+         width="39.106354"
+         id="rect19"
+         style="fill:#b5191a;fill-opacity:1;stroke-width:1.00517;stroke-linecap:round" />
       <g
-         aria-label="F"
-         id="text12"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.1987px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1">
+         transform="matrix(0.24895434,0,0,0.24895434,52.650252,1.0321618)"
+         id="g879">
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.1987px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
+           id="text12"
+           aria-label="F">
+          <path
+             id="path881"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
+             d="m 51.793764,48.06378 v 8.092613 l -0.618185,-0.112397 q 0,-3.709115 -3.990108,-5.170281 Q 43.251562,49.35635 35.158949,49.35635 v 17.702591 q 3.259525,-0.112398 5.057883,-0.337192 1.854557,-0.280994 2.809935,-1.067776 0.955378,-0.84298 1.180173,-1.798358 0.224795,-0.955378 0.224795,-2.922332 l 0.674384,-0.112398 v 13.656284 l -0.674384,-0.112397 q 0,-2.58514 -0.561987,-3.709114 -0.505789,-1.123974 -2.472743,-1.685961 -1.910756,-0.561987 -6.238056,-0.674385 v 6.406652 q 0,7.980215 0.730583,9.328984 0.337193,0.730583 0.730583,1.404968 0.44959,0.618185 1.292571,0.84298 1.798358,0.44959 4.383498,0.44959 l 0.112398,0.674384 h -16.85961 l 0.112397,-0.674384 q 2.809935,0 4.102505,-1.067776 1.404968,-1.180172 1.404968,-10.958746 V 60.764686 q 0,-6.01326 -0.393391,-8.20501 -0.337193,-2.247948 -1.011577,-2.809935 -1.29257,-1.067775 -4.102505,-1.067775 L 25.548972,48.06378 Z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.1987px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
+           id="text16"
+           aria-label="A">
+          <path
+             id="path884"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
+             d="m 113.76433,86.728486 q 2.13555,0 2.97853,-0.337192 0.89918,-0.337193 0.89918,-1.74216 0,-1.404968 -2.97854,-9.553779 H 97.522901 q -2.416544,7.137235 -2.416544,8.991792 0,1.798358 0.899179,2.247948 0.955378,0.393391 3.371922,0.393391 l 0.112398,0.674384 H 86.845148 l 0.112398,-0.674384 q 1.629762,0 2.528941,-0.280994 0.955378,-0.280993 2.023153,-1.461166 1.123974,-1.236371 2.135551,-3.540518 1.011576,-2.304147 2.416544,-6.462851 l 5.001685,-14.443065 q 2.64134,-7.643024 2.64134,-9.272786 0,-1.629762 -0.78678,-2.079352 -0.78679,-0.505788 -3.034733,-0.505788 L 99.770849,48.06378 h 9.272781 l 9.94717,26.919177 q 2.52895,6.687646 3.37193,8.486004 0.89918,1.798359 1.68596,2.304147 1.40497,0.955378 3.54052,0.955378 l 0.11239,0.674384 H 113.65193 Z M 105.89651,51.09851 97.972491,73.746586 h 16.241429 z" />
+        </g>
         <path
-           d="m 51.793764,48.06378 v 8.092613 l -0.618185,-0.112397 q 0,-3.709115 -3.990108,-5.170281 Q 43.251562,49.35635 35.158949,49.35635 v 17.702591 q 3.259525,-0.112398 5.057883,-0.337192 1.854557,-0.280994 2.809935,-1.067776 0.955378,-0.84298 1.180173,-1.798358 0.224795,-0.955378 0.224795,-2.922332 l 0.674384,-0.112398 v 13.656284 l -0.674384,-0.112397 q 0,-2.58514 -0.561987,-3.709114 -0.505789,-1.123974 -2.472743,-1.685961 -1.910756,-0.561987 -6.238056,-0.674385 v 6.406652 q 0,7.980215 0.730583,9.328984 0.337193,0.730583 0.730583,1.404968 0.44959,0.618185 1.292571,0.84298 1.798358,0.44959 4.383498,0.44959 l 0.112398,0.674384 h -16.85961 l 0.112397,-0.674384 q 2.809935,0 4.102505,-1.067776 1.404968,-1.180172 1.404968,-10.958746 V 60.764686 q 0,-6.01326 -0.393391,-8.20501 -0.337193,-2.247948 -1.011577,-2.809935 -1.29257,-1.067775 -4.102505,-1.067775 L 25.548972,48.06378 Z"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
-           id="path881" />
+           style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M 72.391948,48.063768 V 87.402899"
+           id="path844" />
       </g>
-      <g
-         aria-label="A"
-         id="text16"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.1987px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1">
-        <path
-           d="m 113.76433,86.728486 q 2.13555,0 2.97853,-0.337192 0.89918,-0.337193 0.89918,-1.74216 0,-1.404968 -2.97854,-9.553779 H 97.522901 q -2.416544,7.137235 -2.416544,8.991792 0,1.798358 0.899179,2.247948 0.955378,0.393391 3.371922,0.393391 l 0.112398,0.674384 H 86.845148 l 0.112398,-0.674384 q 1.629762,0 2.528941,-0.280994 0.955378,-0.280993 2.023153,-1.461166 1.123974,-1.236371 2.135551,-3.540518 1.011576,-2.304147 2.416544,-6.462851 l 5.001685,-14.443065 q 2.64134,-7.643024 2.64134,-9.272786 0,-1.629762 -0.78678,-2.079352 -0.78679,-0.505788 -3.034733,-0.505788 L 99.770849,48.06378 h 9.272781 l 9.94717,26.919177 q 2.52895,6.687646 3.37193,8.486004 0.89918,1.798359 1.68596,2.304147 1.40497,0.955378 3.54052,0.955378 l 0.11239,0.674384 H 113.65193 Z M 105.89651,51.09851 97.972491,73.746586 h 16.241429 z"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#ffffff;stroke:#ffffff;stroke-width:0.1"
-           id="path884" />
-      </g>
-      <path
-         id="path844"
-         d="M 72.391948,48.063768 V 87.402899"
-         style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <g
        aria-label="FOTOGRAFOS   ARGENTINOS"
        id="text848"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.95203px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';text-align:center;text-anchor:middle;fill:#b5191a;fill-opacity:1;stroke:#b5191a;stroke-width:0.1">
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.95203px;line-height:1.25;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';text-align:center;text-anchor:middle;fill:#b5191a;fill-opacity:1;stroke:#b5191a;stroke-width:0.1"
+       transform="matrix(0.57236949,0,0,0.57236949,20.821681,-59.7187)">
       <path
          d="m 16.128717,116.48794 v 1.14509 l -0.08747,-0.0159 q 0,-0.52484 -0.564595,-0.73159 -0.556642,-0.2147 -1.701734,-0.2147 v 2.50488 q 0.461218,-0.0159 0.715683,-0.0477 0.262417,-0.0398 0.397601,-0.15109 0.135185,-0.11928 0.166993,-0.25446 0.03181,-0.13519 0.03181,-0.41351 l 0.09542,-0.0159 v 1.93234 l -0.09542,-0.0159 q 0,-0.36579 -0.07952,-0.52484 -0.07157,-0.15904 -0.34989,-0.23856 -0.270369,-0.0795 -0.882675,-0.0954 v 0.90653 q 0,1.12919 0.103376,1.32004 0.04771,0.10337 0.103377,0.1988 0.06362,0.0875 0.182896,0.11928 0.254465,0.0636 0.620259,0.0636 l 0.0159,0.0954 h -2.385609 l 0.0159,-0.0954 q 0.397601,0 0.580498,-0.15109 0.198801,-0.167 0.198801,-1.55065 v -1.9721 q 0,-0.85087 -0.05566,-1.161 -0.04771,-0.31808 -0.143137,-0.3976 -0.182897,-0.15109 -0.580498,-0.15109 l -0.0159,-0.0875 z"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';text-align:center;text-anchor:middle;fill:#b5191a;fill-opacity:1;stroke:#b5191a;stroke-width:0.1"
@@ -184,7 +189,101 @@
     </g>
     <text
        xml:space="preserve"
-       id="text850"
-       style="line-height:1.25;font-family:Montserrat;font-size:10.58333333px;-inkscape-font-specification:Montserrat;white-space:pre;shape-inside:url(#rect852);" />
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#b5191a;fill-opacity:1;stroke-width:0.264583"
+       x="132.25633"
+       y="44.671268"
+       id="text1065"><tspan
+         sodipodi:role="line"
+         id="tspan1063"
+         x="132.25633"
+         y="44.671268"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#b5191a;fill-opacity:1;stroke-width:0.264583">FOTOGRAFOS</tspan><tspan
+         sodipodi:role="line"
+         x="132.25633"
+         y="58.283871"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gilda Display';-inkscape-font-specification:'Gilda Display';fill:#b5191a;fill-opacity:1;stroke-width:0.264583"
+         id="tspan1067">ARGENTINOS</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#b5191a;stroke-width:0.501052;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 3.9687501,16.304257 H 91.281252"
+       id="path1069" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.19883px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;fill:#241c1c;stroke-width:0.109942"
+       x="41.851528"
+       y="14.060714"
+       id="text1136"><tspan
+         sodipodi:role="line"
+         id="tspan1134"
+         x="41.851528"
+         y="14.060714"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.19884px;font-family:System-ui;-inkscape-font-specification:System-ui;fill:#241c1c;stroke-width:0.109942">Comunidad Argentina de Fotógrafos</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.264583"
+       x="169.84369"
+       y="68.03199"
+       id="text1140"><tspan
+         sodipodi:role="line"
+         id="tspan1138"
+         x="169.84369"
+         y="68.03199"
+         style="stroke-width:0.264583" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.50509px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0.264583px;word-spacing:0.529167px;fill:#b5191a;fill-opacity:1;stroke-width:0.0626272;"
+       x="33.193382"
+       y="32.499237"
+       id="text1144"><tspan
+         sodipodi:role="line"
+         id="tspan1142"
+         x="33.193382"
+         y="32.499237"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:System-ui;-inkscape-font-specification:System-ui;fill:#b5191a;fill-opacity:1;stroke-width:0.0626272;">INGRESÁ TUS DATOS</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#b5191a;stroke-width:0.223828;stroke-linecap:round"
+       id="rect1711"
+       width="87.966064"
+       height="4.9361124"
+       x="3.2559628"
+       y="46.186668"
+       ry="0.59376276" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.92229px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.182643"
+       x="38.037804"
+       y="44.928776"
+       id="text1715"><tspan
+         sodipodi:role="line"
+         id="tspan1713"
+         x="38.037804"
+         y="44.928776"
+         style="stroke-width:0.182643">0 fotógrafos</tspan></text>
+    <text
+       id="text876"
+       y="63.361977"
+       x="6.8573852"
+       style="font-size:4.23333px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="63.361977"
+         x="6.8573852"
+         id="tspan874"
+         sodipodi:role="line">Nombre</tspan></text>
+    <path
+       id="path878"
+       d="M 3.9687501,64.987621 H 91.281252"
+       style="fill:none;fill-opacity:1;stroke:#b5191a;stroke-width:0.26458334;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;stroke-width:0.264583"
+       x="53.424061"
+       y="63.361977"
+       id="text882"><tspan
+         sodipodi:role="line"
+         id="tspan880"
+         x="53.424061"
+         y="63.361977"
+         style="stroke-width:0.264583">Ciudad</tspan></text>
   </g>
 </svg>

@@ -15,14 +15,16 @@
     });
     Contador = Fotografos.length;
     Fotografos = [...Fotografos].sort(() => 0.5 - Math.random());
-
     Dataset = [...new Set(Dataset)];
   });
 
+  // Filtrar la tabla
   function filtrarTabla() {
-    const tabla = document.getElementById("fotografos");
+    const tableBody = document.querySelector("#tbody");
+    if (!tableBody) return;
+
     const input = document.getElementById("buscar");
-    const filas = tabla.tBodies[0].childNodes;
+    const filas = document.getElementById("tbody").childNodes;
 
     function filtrar() {
       const query = new RegExp(input.value, "ig");
@@ -41,13 +43,11 @@
       });
     }
 
-    input.addEventListener("input", filtrar);
-    input.focus();
+    if (input) {
+      input.addEventListener("input", filtrar);
+      input.focus();
+    }
   }
-
-  document.addEventListener("readystatechange", () => {
-    if (document.readyState === "complete") filtrarTabla();
-  });
 
   function mostrarInfo(fila) {
     const el = fila.target.parentElement;
@@ -123,15 +123,24 @@
     text-align: center;
   }
 
-  table {
-    line-height: 3;
+  table th {
+    font-size: 14px;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding: 0.5em 0;
   }
-  table tbody th {
-    font-weight: normal;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    height: 3rem;
+
+  table th:nth-child(1) {
+    width: 60%;
   }
+
+  table th:nth-child(2) {
+    width: 40%;
+  }
+
   .modal {
     display: none;
     text-align: center;
@@ -161,46 +170,50 @@
 </style>
 
 <section>
-  <label for="buscar">{`${Contador} fotógrafos`}</label>
-  <input
-    id="buscar"
-    type="search"
-    list="datalist"
-    placeholder="Buscá fotógrafos de tu ciudad" />
-  <datalist id="datalist">
-    {#each Dataset as item}
-      <option value={item} />
-    {/each}
-  </datalist>
+  {#if Fotografos.length}
+    <label for="buscar">{`${Contador} fotógrafos`}</label>
+    <input
+      on:input={filtrarTabla}
+      id="buscar"
+      type="search"
+      list="datalist"
+      class="flat"
+      placeholder="Buscá fotógrafos de tu ciudad" />
 
-  <table id="fotografos">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Ciudad</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {#each Fotografos as item}
-        <tr
-          data-nombre={item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
-          data-email={item.Email}
-          data-website={item.Website}
-          data-tel={item.Teléfono || ''}
-          data-ciudad={item.Ciudad || ''}
-          data-provincia={item.Provincia}
-          on:click={mostrarInfo}>
-          <th>
-            {item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
-          </th>
-          <th>{item.Ciudad || item.Provincia}</th>
-
-        </tr>
+    <datalist id="datalist">
+      {#each Dataset as item}
+        <option value={item} />
       {/each}
-    </tbody>
-  </table>
+    </datalist>
 
+    <table id="fotografos">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Ciudad</th>
+        </tr>
+      </thead>
+
+      <tbody id="tbody">
+        {#each Fotografos as item}
+          <tr
+            data-nombre={item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
+            data-email={item.Email}
+            data-website={item.Website}
+            data-tel={item.Teléfono || ''}
+            data-ciudad={item.Ciudad || ''}
+            data-provincia={item.Provincia}
+            on:click={mostrarInfo}>
+            <th>
+              {item['Nombre Comercial'] || `${item.Nombre} ${item.Apellido}`}
+            </th>
+            <th>{item.Ciudad || item.Provincia}</th>
+
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  {/if}
   <div class="modal Inv ">
     <h1>Nombre</h1>
     <a href target="_blank">Website</a>

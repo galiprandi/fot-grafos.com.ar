@@ -3,69 +3,42 @@
 </script>
 
 <style>
-  .logo {
-    width: 100px;
-  }
-  nav {
-    padding: 0;
-  }
-  nav ul {
+  header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    list-style: none;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--hover);
   }
-  nav ul li {
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
+
+  header * {
     margin: 0;
-    padding: 1rem;
   }
-  nav ul li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+
+  .titulo {
+    font-family: "Gilda Display", serif;
+    color: var(--hover);
+    font-size: 20px;
   }
-  nav ul img {
-    display: none;
+
+  .subtitulo {
+    font-weight: 100;
   }
-  li.avatar {
-    display: flex;
-    justify-content: center;
-  }
-  .avatar img {
-    display: block;
-    margin: 0;
-    height: 2rem;
-    clip-path: circle();
+
+  .logo {
+    height: 35px;
   }
 </style>
 
 <header>
-  <nav class="Sin Inv">
-    <ul on:click={(e) => ($displayPage = e.target.dataset.page)} class="navbar">
-      <li />
-      <li data-page="Home">
-        <img
-          src="/site/imagenes/logo.svg"
-          id="logo"
-          alt="Fotógrafos Argentinos" />
-        Inicio
-      </li>
-      <li data-page="Mis Datos">Mis Datos</li>
-      {#if $loginUser}
-        <!-- svelte-ignore missing-declaration -->
-        <li on:click={cerrarSesion} class="avatar">
-          <img
-            src={$loginUser.providerData[0].photoURL}
-            alt={$loginUser.displayName}
-            title={$loginUser.displayName} />
-        </li>
-        <!-- <li data-page="Mis Datos">Mis Datos</li> -->
-      {:else}
-        <!-- svelte-ignore missing-declaration -->
-        <li on:click={iniciarSesion}>Ingresar</li>
-      {/if}
-
-    </ul>
-  </nav>
+  <a href on:click={() => ($displayPage = 'Home')}>
+    <img
+      class="logo"
+      src="/site/imagenes/isotipo.svg"
+      alt="Fotógrafos Argentinos" />
+  </a>
+  <div class="left">
+    <h1 class="titulo">Fotógrafos Argentinos</h1>
+    <h6 class="subtitulo">Comunidad Argentina de Fotógrafos</h6>
+  </div>
 </header>
