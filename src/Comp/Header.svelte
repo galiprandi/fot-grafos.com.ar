@@ -15,6 +15,10 @@
     margin: 0;
   }
 
+  .logo {
+    height: 40px;
+  }
+
   .titulo {
     font-family: "Gilda Display", serif;
     color: var(--hover);
@@ -24,14 +28,10 @@
   .subtitulo {
     font-weight: 100;
   }
-
-  .logo {
-    height: 35px;
-  }
 </style>
 
 <header>
-  <a href on:click={() => ($displayPage = 'Home')}>
+  <a href on:click|preventDefault={() => ($displayPage = 'Home')}>
     <img
       class="logo"
       src="/site/imagenes/isotipo.svg"

@@ -220,33 +220,33 @@
     <fieldset>
 
       <caption>Redes sociales</caption>
-      <label for="Website">Sitio Web</label>
+      <label for="Website">Sitio Web (opcional)</label>
       <input
         bind:value={User.Website}
         name="Website"
         type="text"
-        placeholder="Opcional" />
+        placeholder="Ej: misitio.com" />
 
-      <label for="Facebook">Facebook</label>
+      <label for="Facebook">Facebook (opcional)</label>
       <input
         bind:value={User.Facebook}
         name="Facebook"
         type="text"
-        placeholder="Opcional" />
+        placeholder="Ej: fb.com/usario" />
 
-      <label for="Instagram">Instagram</label>
+      <label for="Instagram">Instagram (opcional)</label>
       <input
         bind:value={User.Instagram}
         name="Instagram"
         type="text"
-        placeholder="Opcional" />
+        placeholder="Ej: instagram.com/usuario" />
 
-      <label for="Twitter">Twitter</label>
+      <label for="Twitter">Twitter (opcional)</label>
       <input
         bind:value={User.Twitter}
         name="Twitter"
         type="text"
-        placeholder="Opcional" />
+        placeholder="Ej: twitter.com/galiprandi" />
 
       <label for="Información Adicional">Información Adicional</label>
       <textarea

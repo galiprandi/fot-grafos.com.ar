@@ -114,6 +114,7 @@
 
 <style>
   input {
+    font-size: 14px;
     width: 100%;
   }
 

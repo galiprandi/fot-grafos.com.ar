@@ -7,10 +7,10 @@
   button.Hover {
     color: var(--hover);
     border-color: var(--hover);
-    line-height: 2;
+    line-height: 1.5;
     display: block;
     margin: 1.5em auto;
-    padding: 5px 20px;
+    padding: 0.5em 1em;
     text-transform: uppercase;
     font-size: 14px;
   }
