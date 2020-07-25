@@ -125,7 +125,7 @@
 
   table th {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

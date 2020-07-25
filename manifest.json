@@ -1,17 +1,22 @@
 {
+  "short_name": "Fotógrafos Argentinos",
   "name": "Fotógrafos Argentinos",
-  "short_name": "Foto.Ar",
-  "theme_color": "#e63946",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "description": "Comunidad Argentina de Fotógrafos",
   "icons": [
     {
-      "src": "site/imagenes/logo-512.png",
-      "sizes": "512x512",
+      "src": "site/imagenes/logo.png",
       "type": "image/png",
-      "purpose": "badge"
+      "sizes": "512x512"
+    },
+    {
+      "src": "site/imagenes/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
-  ]
+  ],
+  "start_url": "/",
+  "background_color": "white",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#b5191a"
 }
